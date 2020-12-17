@@ -23,7 +23,7 @@ public class AlgoResponseData {
         rawData = data
         self.error = error
         if let json = try? getJSON() {
-            if let error = json?["error"] as? [String:Any] {
+            if let error = json["error"] as? [String:Any] {
                 if let message = error["message"] as? String {
                     self.error = AlgoError.ProcessError(statusCode, message)
                 }
@@ -38,7 +38,7 @@ public class AlgoResponseData {
     
     func errorMessage() -> String? {
         if let json = try? getJSON() {
-            if let error = json?["error"] as? [String:Any] {
+            if let error = json["error"] as? [String:Any] {
                 if let message = error["message"] as? String {
                     return message
                 }

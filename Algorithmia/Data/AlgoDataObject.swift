@@ -31,7 +31,7 @@ public class AlgoDataObject {
         }
     }
     
-    open let path:String
+    public let path:String
     
     let client:AlgoAPIClient
     let dataType:DataObjectType
